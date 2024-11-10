@@ -57,6 +57,7 @@
 		border-radius: 25px;
 		margin: auto;
 		margin-top: 7.5%;
+		margin-bottom: 7.5%;
 		width: 30em;
 		height: 30em;
 		padding: 1em;
@@ -183,8 +184,8 @@
 		border: solid #ff7575 10px;
 		border-radius: 25px;
 		margin: auto;
-		margin-top: 3.5%;
-		margin-bottom: 3.5%;
+		margin-top: 7.5%;
+		margin-bottom: 7.5%;
 		width: 30em;
 		height: 30em;
 		padding: 1em;
@@ -310,8 +311,8 @@
 		border: solid #ff7575 5px;
 		border-radius: 25px;
 		margin: auto;
-		margin-top: 3.5%;
-		margin-bottom: 3.5%;
+		margin-top: 7.5%;
+		margin-bottom: 7.5%;
 		width: 15em;
 		height: 17em;
 		padding: 1em;
