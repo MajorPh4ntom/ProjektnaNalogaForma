@@ -8,7 +8,7 @@ const emsoInput = document.getElementById('EMSOInput');
 const naslovInput = document.getElementById('naslovInput');
 const inputKoda = document.getElementById('inputKoda');
 
-// Format phone number and validate in real-time
+// formatira in validira
 telInput.addEventListener('input', function () {
     const inputValue = telInput.value.replace(/\D/g, ''); // Remove non-digit characters
     const formattedValue = formatPhoneNumber(inputValue);
@@ -23,24 +23,24 @@ telInput.addEventListener('input', function () {
     }
 });
 
-// Restrict EMSO to digits only and max length 13
+// omeji EMSO sam na 13 znakov in sam na cifre
 emsoInput.addEventListener('input', function () {
     this.value = this.value.replace(/[^0-9]/g, '').slice(0, 13);
 });
 
-// Restrict ZIP code to digits only and max length 4
+// omeji ZIP na 4 cifre
 inputKoda.addEventListener('input', function () {
     this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4);
 });
 
-// Prevent digits in IME, PRIIMEK, KRAJ fields
+// samo crke na IME, PRIIMEK, KRAJ
 [imeInput, priimekInput, krajInput].forEach(input => {
     input.addEventListener('input', function () {
         this.value = this.value.replace(/[0-9]/g, '');
     });
 });
 
-// Function to format phone number as 123-456-789
+// formatira telefonsko kot 123-456-789
 function formatPhoneNumber(value) {
     if (value.length < 4) return value;
     if (value.length < 7) {
@@ -49,13 +49,13 @@ function formatPhoneNumber(value) {
     return value.slice(0, 3) + '-' + value.slice(3, 6) + '-' + value.slice(6, 9);
 }
 
-// Function to validate phone number
+// validira telefonsko
 function validatePhoneNumber(phone) {
     const phoneRegex = /^\d{3}-\d{3}-\d{3}$/;
     return phoneRegex.test(phone);
 }
 
-// Validation function for the entire form
+// validira celo formo
 function validateForm() {
     const ime = imeInput.value.trim();
     const priimek = priimekInput.value.trim();
@@ -66,7 +66,7 @@ function validateForm() {
     const kraj = krajInput.value.trim();
     const postnaStevilka = inputKoda.value.trim();
 
-    // Check if fields are empty or invalid
+    // preveri ce use ok
     if (!ime || !priimek || krajRojstva === "0" || !validatePhoneNumber(telefon) ||
         !emso || emso.length !== 13 || !naslov || !kraj || postnaStevilka.length !== 4) {
         Swal.fire({
@@ -77,7 +77,7 @@ function validateForm() {
         return false;
     }
 
-    // If all fields are valid, show success message
+    // ce je use ok da en sweetalert
     Swal.fire({
         icon: 'success',
         title: 'Uspeh',
@@ -86,7 +86,7 @@ function validateForm() {
     return true;
 }
 
-// Attach validation to the button click
+// validira na gumbu (ko kliknes gumb komaj validira celo formo)
 document.getElementById('oddajPrijavo').addEventListener('click', function () {
     validateForm();
 });
