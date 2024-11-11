@@ -10,7 +10,7 @@ const inputKoda = document.getElementById('inputKoda');
 
 // formatira in validira
 telInput.addEventListener('input', function () {
-    const inputValue = telInput.value.replace(/\D/g, ''); // Remove non-digit characters
+    const inputValue = telInput.value.replace(/\D/g, ''); // odstrani use crke
     const formattedValue = formatPhoneNumber(inputValue);
     telInput.value = formattedValue;
 
