@@ -7,4 +7,5 @@
 7. Malo redesign na neke bolj clean(kasno bolj umirjeno ozadje), naj ne bo use rozasto.
 8. Uredi file tree, da je use povezano(index.html v root, pa preimenuj file v normalno npr. skripte v js, slike v img) 
 9. Na koncu se uploadaj na github!
+11. Dodaj masko na date in naslov!
 10. In na githubu dodaj en readMe!
