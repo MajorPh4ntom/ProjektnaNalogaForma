@@ -1,11 +1,11 @@
 1. Omeji stevilo znakov na login! -----------
 2. Zmanjšaj padding na Forma.html . ------------
-3. Naredi registracijo! 
+3. Naredi registracijo! --------
 4. Fixaj ko se spreminja velikost in dimenzije okna/displeja!!! PRIORITETA. -----------
 5. Ko oddas prijavo naj gre sweetalert in potem skoci na zaceten index.html. ------------
 6. Dodaj funkcionalsnosti vec sweetalertov, daj consistent fonte, daj vec javascripta v preverjanje polji itd. -------------
 7. Malo redesign na neke bolj clean(kasno bolj umirjeno ozadje), naj ne bo use rozasto. ------------
-8. Uredi file tree, da je use povezano(index.html v root, pa preimenuj file v normalno npr. skripte v js, slike v img) 
-9. Na koncu se uploadaj na github!
-11. Dodaj masko na date in naslov! ------------
-10. In na githubu dodaj en readMe!
+8. Uredi file tree, da je use povezano(index.html v root, pa preimenuj file v normalno npr. skripte v js, slike v img)  ----------
+9. Na koncu se uploadaj na github! 
+11. Dodaj masko na date in naslov! --------------
+10. In na githubu dodaj en readMe! 
