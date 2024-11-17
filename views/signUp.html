@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+	<link rel="icon" type="image/x-icon" href="../assets/Pes_FAVI.ico">
+	<link rel="stylesheet" type="text/css" href="../styles/styleSignUp.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<title>Pet Adoption</title>
+</head>
+<body style="background-image: url(../assets/ozadje1.jpg);">
+	<div class="glava">
+		<h1>Ustvaritev računa</h1>
+	</div>
+	<div>
+		<div class="mainOkvir">
+			<form id="signupForm" method="POST">
+				<h2>VAŠI PODATKI</h2>
+				<div class="premikForum">
+					<div class="urejenostDiv" style="margin-left: -1vw;">
+						<label>IME:</label>
+						<input type="text" name="Ime" placeholder="Marko" maxlength="20" class="stiliInput" id="imeInput">
+					</div>
+					<div class="urejenostDiv" style="margin-left: 1vw;">
+						<label>PRIIMEK:</label>
+						<input type="text" name="Priimek" placeholder="Pipan" maxlength="20" class="stiliInput" id="priimekInput">
+					</div>
+				</div>
+
+				<div class="premikForum">
+					<div class="urejenostDiv">
+						<label id="labelRoj">DATUM ROJSTVA:</label>
+						<input type="date" name="lRoj" class="stiliInput" id="datumInput">
+					</div>
+				</div>
+				<div class="premikForum">
+					<div class="urejenostDiv">
+						<label>E-MAIL:</label>
+						<input type="mail" name="Mail" placeholder="info@ahp.si" maxlength="30" class="stiliInput" id="mailInput">
+					</div>
+				</div>
+				<div class="premikForum">
+					<div class="urejenostDiv">
+						<label>GESLO:</label>
+						<input type="password" placeholder="mojeIme2002?" class="stiliInput" id="geslo1">
+					</div>
+				</div>
+				<div class="premikForum">
+					<span id="preverjanjeSms">Validator</span>
+				</div>
+				<div class="premikForum">
+					<div class="urejenostDiv">
+						<label>PONOVNO VNESI GESLO:</label>
+						<input type="password" placeholder="mojeIme2002?" class="stiliInput" id="geslo2" name="confirmPassword">
+					</div>
+				</div>
+				<div class="premikForum">
+					<div class="urejenostDiv" class="inputRadio">
+						<label>SPOL:</label>
+						<div class="stiliInput" id="spremembaRadio">
+							<label>
+						        <input type="radio" name="spol" value="moški" style="cursor: pointer;"> MOŠKI
+						    </label>
+						    <label>
+						        <input type="radio" name="spol" value="ženska" style="cursor: pointer;"> ŽENSKA
+						    </label>
+						</div>
+					</div>
+				</div>
+				<div class="premikForum">
+					<div class="urejenostDiv">
+						<input type="submit" value="USTVARI RAČUN" class="gumbSubmit">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="../js/skripteSignUp.js"></script>
+</body>
+</html>
