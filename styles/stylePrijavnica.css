@@ -1,0 +1,744 @@
+/*
+
+	OSNOVNA KODA -----------------------------------
+
+*/
+
+
+* {
+	margin: 0;
+	padding: 0;
+	position: static;
+}
+
+@font-face {
+	font-family: Vsebina;
+	src: url(../fonts/Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf);
+}
+@font-face {
+	font-family: Vsebina2;
+	src: url(../fonts/Krub/Krub-Medium.ttf);
+}
+
+.my-title {
+	font-family: Vsebina;
+	color: black;
+	user-select: none;
+}
+
+.my-text {
+	font-family: Vsebina;
+	color: black;
+	user-select: none;
+}
+
+.my-confirm-button {
+	border: solid #ff7575 4px;
+	background: #ffc7ae;
+	color: black;
+	transition: 0.3s;
+	font-family: Vsebina2;
+}
+
+.my-confirm-button:hover {
+	background: #ff9f75;
+	transition: 0.3s;
+	font-weight: bold;
+}
+
+.my-denied-button {
+	border: solid #ff7575 4px;
+	background: #ffc7ae;
+	color: black;
+	transition: 0.3s;
+	font-family: Vsebina2;
+}
+
+.my-denied-button:hover {
+	background: #ff9f75;
+	transition: 0.3s;
+	font-weight: bold;
+}
+
+
+
+/*
+
+	ZAČETEK @media in spreminnjanje rezolucije ------------------------------------------------------------
+
+*/
+
+
+/*velikost za telefone*/
+@media only screen and (max-width: 599px){
+	html, body {
+		width: 100%;
+		height: 100%;
+		position: static;
+	}
+
+	h1 {
+		color: black;
+		font-family: Vsebina2;
+		font-size: 3vw;
+		justify-content: center;
+		display: flex;
+		user-select: none;
+	}
+
+	h2 {
+		color: black;
+		font-family: Vsebina2;
+		font-weight: bold;
+		font-size: 2.5vw;
+		justify-content: center;
+		display: flex;
+		user-select: none;
+		margin-bottom: 1vw;
+	}
+
+	/*zacetek velikih divov ------------------------------------*/
+
+	.glava {
+		background: #ffe7e7;
+		border-bottom: solid #ff7575 0.5vw;
+		width: 100%;
+		height: 10vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+		font-size: 5vw;
+		user-select: none;
+	}
+
+	.okvir {
+		background: #ffe7e7;
+	    border: solid #ff7575 0.5vw;      
+	    border-radius: 2vw;
+	    margin: auto;
+	    margin-top: 2vh;
+	    margin-bottom: 2vh;
+	    padding: 0 20px;
+	    width: 30vw;
+	    max-width: 600px; /*max velikost za vecje displeje*/
+	    padding-bottom: 2vh;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	}
+
+	/*konec velikih divov -------------------------------------------------------*/
+
+	/*DIVI v znacki okvir ---------*/
+
+	.forumOkvir{
+		display: flex;
+		align-items: center;
+	}
+
+	#premikImePriimek{
+		display: inline-block;
+	}
+
+	#premikNaslov{
+		display: inline-block;
+		margin-left: 12vh;
+	}
+
+	#imeInput, #priimekInput, #selectRoj, #datumInput, #krajInput, #inputKoda, #telInput, #mailInput {
+		width: 11vw;
+	}
+
+	#EMSOInput, #naslovInput {
+		width: 15vw;
+	}
+
+	.naslovLabel, .imePriimekLabel, .krajLabel, .posLabel, .telLabel, .mailLabel, .stanLabel{
+		font-family: Vsebina;
+		font-size: 1.5vw;
+		display: block;
+		margin-top: 5px;
+		user-select: none;
+	}
+
+	#preverjanjeSms {
+		font-family: Vsebina;
+		font-size: 1vw;
+		display: block;
+		user-select: none;
+	}
+
+	.stanLabel {
+		margin-right: 1vw;
+	}
+
+	.stiliInputRadio{
+		height: 9px;
+		border: solid #ff7575 3px;
+		background: #ffc7ae;
+		border-radius: 5px;
+		padding: 4px 4px 4px 4px;
+		font-family: Vsebina;
+		font-size: 1.2vw;
+		display: flex;
+		justify-content: center;
+	}
+	.stiliInputRadio > label{
+		padding-top: 0.3vw;
+		flex: 1;
+		padding-right: 3px;
+	}
+	input[type="radio"] {
+	    width: 9px;
+	    height: 9px;
+	    cursor: pointer;
+	    display: block;
+	}
+
+	#oddajPrijavo{
+		margin-top: 10%;
+		width: 15vw;
+		height: 20px;
+		border: solid #ff7575 3px;
+		border-radius: 5px;
+		background: #ffc7ae;
+		transition: 0.3s;
+		cursor: pointer;
+		text-decoration: none;
+		font-family: Vsebina2;
+		font-size: 1.2vw;
+		margin-left: 14vh;
+	}
+
+	#oddajPrijavo:hover{
+		transition: 0.3s;
+		background: #ff9f75;
+		font-weight: bold;
+		color: black;
+	}
+
+	.stiliInput{
+		border: solid #ff7575 3px;
+		background: #ffc7ae;
+		border-radius: 5px;
+		margin: 3px 30px 10px auto;
+		padding: 4px 4px 4px 4px;
+		box-sizing: border-box;
+		font-family: Vsebina;
+		font-size: 1.2vw;
+	}
+
+	
+}
+
+
+
+/*
+
+	PONAVLJAJOCA KODA --------------------------------------------------------------------------------------------------------- 1
+
+*/
+/*velikost za tablice*/
+@media only screen and (min-width: 600px) and (max-width: 899px){
+	html, body {
+		width: 100%;
+		height: 100%;
+		position: static;
+	}
+
+	h1 {
+		color: black;
+		font-family: Vsebina2;
+		font-size: 2.5vw;
+		justify-content: center;
+		display: flex;
+		user-select: none;
+	}
+
+	h2 {
+		color: black;
+		font-family: Vsebina2;
+		font-weight: bold;
+		font-size: 1.9vw;
+		justify-content: center;
+		display: flex;
+		user-select: none;
+		margin-bottom: 1vw;
+	}
+
+	/*zacetek velikih divov ------------------------------------*/
+
+	.glava {
+		background: #ffe7e7;
+		border-bottom: solid #ff7575 0.5vw;
+		width: 100%;
+		height: 10vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+		font-size: 5vw;
+		user-select: none;
+	}
+
+	.okvir {
+		background: #ffe7e7;
+	    border: solid #ff7575 0.5vw;      
+	    border-radius: 2vw;
+	    margin: auto;
+	    margin-top: 2vh;
+	    margin-bottom: 2vh;
+	    padding: 0 20px;
+	    width: 30vw;
+	    max-width: 600px; /*max velikost za vecje displeje*/
+	    padding-bottom: 2vh;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	}
+
+	/*konec velikih divov -------------------------------------------------------*/
+
+	/*DIVI v znacki okvir ---------*/
+
+	.forumOkvir{
+		display: flex;
+		justify-content: center;
+		margin-left: 10px;
+	}
+
+	#premikImePriimek{
+		
+		display: inline-block;
+	}
+
+	#premikNaslov{
+		display: inline-block;
+		justify-content: center;
+	}
+
+	#imeInput, #priimekInput, #selectRoj, #datumInput, #krajInput, #inputKoda, #telInput, #mailInput {
+		width: 11vw;
+	}
+
+	#EMSOInput, #naslovInput {
+		width: 15vw;
+	}
+
+	.naslovLabel, .imePriimekLabel, .krajLabel, .posLabel, .telLabel, .mailLabel, .stanLabel{
+		font-family: Vsebina;
+		font-size: 1.5vw;
+		display: block;
+		margin-top: 5px;
+		user-select: none;
+	}
+
+	#preverjanjeSms {
+		font-family: Vsebina;
+		font-size: 1vw;
+		display: block;
+		user-select: none;
+	}
+
+	.stanLabel {
+		margin-right: 1vw;
+	}
+
+	.stiliInputRadio{
+		height: 12px;
+		border: solid #ff7575 3px;
+		background: #ffc7ae;
+		border-radius: 10px;
+		padding: 4px 4px 4px 4px;
+		font-family: Vsebina;
+		font-size: 1.3vw;
+		display: flex;
+		justify-content: center;
+	}
+	.stiliInputRadio > label{
+		flex: 1;
+		padding-right: 0.5vw;
+	}
+	input[type="radio"] {
+	    width: 12px;
+	    height: 12px;
+	    cursor: pointer;
+	    display: block;
+	}
+
+	#oddajPrijavo{
+		margin-top: 20%;
+		width: 15vw;
+		height: 30px;
+		border: solid #ff7575 3px;
+		border-radius: 10px;
+		background: #ffc7ae;
+		transition: 0.3s;
+		cursor: pointer;
+		text-decoration: none;
+		font-family: Vsebina2;
+		font-size: 1.2vw;
+	}
+
+	#oddajPrijavo:hover{
+		transition: 0.3s;
+		background: #ff9f75;
+		font-weight: bold;
+		color: black;
+	}
+
+	.stiliInput{
+		border: solid #ff7575 3px;
+		background: #ffc7ae;
+		border-radius: 10px;
+		margin: 10px 30px 10px auto;
+		padding: 4px 4px 4px 4px;
+		box-sizing: border-box;
+		font-family: Vsebina;
+		font-size: 1.3vw;
+	}
+
+	
+}
+
+
+
+/*
+
+	PONAVLJAJOCA KODA --------------------------------------------------------------------------------------------------------- 2
+
+*/
+/*velikost za majnse displeje*/
+@media only screen and (min-width: 900px) and (max-width: 1199px){
+	html, body {
+		width: 100%;
+		height: 100%;
+		position: static;
+	}
+
+	h1 {
+		color: black;
+		font-family: Vsebina2;
+		font-size: 2.5vw;
+		justify-content: center;
+		display: flex;
+		user-select: none;
+	}
+
+	h2 {
+		color: black;
+		font-family: Vsebina2;
+		font-weight: bold;
+		font-size: 1.9vw;
+		justify-content: center;
+		display: flex;
+		user-select: none;
+		margin-bottom: 1vw;
+	}
+
+	/*zacetek velikih divov ------------------------------------*/
+
+	.glava {
+		background: #ffe7e7;
+		border-bottom: solid #ff7575 0.5vw;
+		width: 100%;
+		height: 10vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+		font-size: 5vw;
+		user-select: none;
+	}
+
+	.okvir {
+		background: #ffe7e7;
+	    border: solid #ff7575 0.5vw;      
+	    border-radius: 2vw;
+	    margin: auto;
+	    margin-top: 2vh;
+	    margin-bottom: 2vh;
+	    padding: 0 20px;
+	    width: 30vw;
+	    max-width: 600px; /*max velikost za vecje displeje*/
+	    padding-bottom: 2vh;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	}
+
+	/*konec velikih divov -------------------------------------------------------*/
+
+	/*DIVI v znacki okvir ---------*/
+
+	.forumOkvir{
+		display: flex;
+		justify-content: center;
+		margin-left: 10px;
+	}
+
+	#premikImePriimek{
+		
+		display: inline-block;
+	}
+
+	#premikNaslov{
+		display: inline-block;
+		justify-content: center;
+	}
+
+	#imeInput, #priimekInput, #selectRoj, #datumInput, #krajInput, #inputKoda, #telInput, #mailInput, #radioInput {
+		width: 11vw;
+	}
+
+	#EMSOInput, #naslovInput {
+		width: 15vw;
+	}
+
+	.naslovLabel, .imePriimekLabel, .krajLabel, .posLabel, .telLabel, .mailLabel, .stanLabel{
+		font-family: Vsebina;
+		font-size: 1vw;
+		display: block;
+		margin-top: 5px;
+		user-select: none;
+	}
+
+	#preverjanjeSms {
+		font-family: Vsebina;
+		font-size: 1vw;
+		display: block;
+		user-select: none;
+	}
+
+	.stanLabel {
+		margin-right: 1vw;
+	}
+
+	.stiliInputRadio{
+		width: 10vw;
+		height: 12px;
+		border: solid #ff7575 3px;
+		background: #ffc7ae;
+		border-radius: 10px;
+		padding: 4px 4px 4px 4px;
+		font-family: Vsebina;
+		font-size: 1vw;
+		display: flex;
+		justify-content: center;
+	}
+	.stiliInputRadio > label{
+		flex: 1;	
+	}
+	input[type="radio"] {
+	    width: 12px;
+	    height: 12px;
+	    cursor: pointer;
+	    display: block;
+	}
+
+	#oddajPrijavo{
+		margin-top: 20%;
+		width: 15vw;
+		height: 30px;
+		border: solid #ff7575 3px;
+		border-radius: 10px;
+		background: #ffc7ae;
+		transition: 0.3s;
+		cursor: pointer;
+		text-decoration: none;
+		font-family: Vsebina2;
+		font-size: 1.2vw;
+	}
+
+	#oddajPrijavo:hover{
+		transition: 0.3s;
+		background: #ff9f75;
+		font-weight: bold;
+		color: black;
+	}
+
+	.stiliInput{
+		border: solid #ff7575 3px;
+		background: #ffc7ae;
+		border-radius: 10px;
+		margin: 10px 30px 10px auto;
+		padding: 4px 4px 4px 4px;
+		box-sizing: border-box;
+		font-family: Vsebina;
+		font-size: 0.9vw;
+	}
+
+	
+}
+
+
+
+/*
+
+	PONAVLJAJOCA KODA --------------------------------------------------------------------------------------------------------- 2
+
+*/
+/*velikost za normalne displeje*/
+@media only screen and (min-width: 1200px){
+	html, body {
+		width: 100%;
+		height: 100%;
+		position: static;
+	}
+
+	h1 {
+		color: black;
+		font-family: Vsebina2;
+		font-size: 2.5vw;
+		justify-content: center;
+		display: flex;
+		user-select: none;
+	}
+
+	h2 {
+		color: black;
+		font-family: Vsebina2;
+		font-weight: bold;
+		font-size: 1.9vw;
+		justify-content: center;
+		display: flex;
+		user-select: none;
+		margin-bottom: 1vw;
+	}
+
+	/*zacetek velikih divov ------------------------------------*/
+
+	.glava {
+		background: #ffe7e7;
+		border-bottom: solid #ff7575 0.5vw;
+		width: 100%;
+		height: 10vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: bold;
+		font-size: 5vw;
+		user-select: none;
+	}
+
+	.okvir {
+		background: #ffe7e7;
+	    border: solid #ff7575 0.5vw;      
+	    border-radius: 2vw;
+	    margin: auto;
+	    margin-top: 2vh;
+	    margin-bottom: 2vh;
+	    padding: 0 20px;
+	    width: 30vw;
+	    max-width: 600px; /*max velikost za vecje displeje*/
+	    padding-bottom: 2vh;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	}
+
+	/*konec velikih divov -------------------------------------------------------*/
+
+	/*DIVI v znacki okvir ---------*/
+
+	.forumOkvir{
+		display: flex;
+		justify-content: center;
+		margin-left: 10px;
+	}
+
+	#premikImePriimek{
+		
+		display: inline-block;
+	}
+
+	#premikNaslov{
+		display: inline-block;
+		justify-content: center;
+	}
+
+	#imeInput, #priimekInput, #selectRoj, #datumInput, #krajInput, #inputKoda, #telInput, #mailInput, #radioInput {
+		width: 11vw;
+	}
+
+	#EMSOInput, #naslovInput {
+		width: 15vw;
+	}
+
+	.naslovLabel, .imePriimekLabel, .krajLabel, .posLabel, .telLabel, .mailLabel, .stanLabel{
+		font-family: Vsebina;
+		font-size: 1vw;
+		display: block;
+		margin-top: 5px;
+		user-select: none;
+	}
+
+	#preverjanjeSms {
+		font-family: Vsebina;
+		font-size: 1vw;
+		display: block;
+		user-select: none;
+	}
+
+	.stanLabel {
+		margin-right: 1vw;
+	}
+
+	.stiliInputRadio{
+		width: 10vw;
+		height: 18px;
+		border: solid #ff7575 3px;
+		background: #ffc7ae;
+		border-radius: 10px;
+		padding: 4px 4px 4px 4px;
+		font-family: Vsebina;
+		font-size: 1vw;
+		display: flex;
+		justify-content: center;
+	}
+	.stiliInputRadio > label{
+		flex: 1;
+	}
+	input[type="radio"] {
+	    width: 16px;
+	    height: 16px;
+	    cursor: pointer;
+	    display: block;
+	}
+
+	#oddajPrijavo{
+		margin-top: 20%;
+		width: 150px;
+		height: 30px;
+		border: solid #ff7575 3px;
+		border-radius: 10px;
+		background: #ffc7ae;
+		transition: 0.3s;
+		cursor: pointer;
+		text-decoration: none;
+		font-family: Vsebina2;
+		font-size: 0.9vw;
+	}
+
+	#oddajPrijavo:hover{
+		transition: 0.3s;
+		background: #ff9f75;
+		font-weight: bold;
+		color: black;
+	}
+
+	.stiliInput{
+		border: solid #ff7575 3px;
+		background: #ffc7ae;
+		border-radius: 10px;
+		margin: 10px 30px 10px auto;
+		padding: 4px 4px 4px 4px;
+		box-sizing: border-box;
+		font-family: Vsebina;
+		font-size: 0.9vw;
+	}
+
+	
+
+}

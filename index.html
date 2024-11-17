@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pet Adoption</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+	<link rel="stylesheet" type="text/css" href="styles/styleIndex.css">
+	<link rel="icon" type="image/x-icon" href="assets/Pes_FAVI.ico">
+	<script src="js/skripteIndex.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body style="background-image: url(assets/ozadje1.jpg);">
+	<div class="okvir" style="position: ;">
+		<div>
+			<h1 id="naslov">POSVOJI ČLOVEKOVEGA NAJBOLJŠEGA PRIJATELJA!</h1>
+			 <form onsubmit="return preveriVnose(event);" id="loginForm"> <!-- onsubmit -->
+				<div id="dimenzijeMail">
+					<label class="naziviVnosov">E-MAIL:</label>
+					<input id="passMail" type="email" name="e-posta" placeholder="Ime.priimek@hotmail.com" class="centeriranjeDiv" maxlength="50">
+
+					<label class="naziviVnosov">GESLO:</label>
+					<input id="passGeslo" type="password" name="geslo" placeholder="Password123?" class="centeriranjeDiv" maxlength="30">
+				</div>
+				<div id="mailPassowrdDiv">
+					<div class="gumbiPremik">
+						<button id="prijava" type="submit" class="gumb">PRIJAVA!</button>
+					</div>
+					<div class="gumbiPremik2">	
+						<button id="ustvariRacun" type="button" class="gumb">USTVARI RAČUN!</button> <!-- Changed to type="button" -->
+					</div>
+				</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
